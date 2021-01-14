@@ -2,6 +2,12 @@ import React from "react";
 import DeckGL from "@deck.gl/react";
 import { PathLayer } from "@deck.gl/layers";
 import { StaticMap } from "react-map-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+import mapboxgl from "mapbox-gl";
+
+// @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 const MAPBOX_ACCESS_TOKEN = process.env.MAPBOX_ACCESS_TOKEN;
 
